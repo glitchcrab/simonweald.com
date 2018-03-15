@@ -1,0 +1,150 @@
+baseurl = "https://www.simonweald.com/"
+languageCode = "en-gb"
+title = "Simon Weald"
+theme = "hugo-strata-theme"
+disqusShortname = "simonweald"
+# Enable Google Analytics by inserting your tracking code
+googleAnalytics = ""
+# Define how many posts should appear on a site
+paginate = 10
+
+[params]
+	# To provide some metadata for search engines feel free to add a few
+    # information about you and your website.
+	name = "Simon Weald"
+	description = "Personal page fpr Simon Weald, a Linux and Automation Engineer"
+
+	# Format dates with Go's time formatting
+	date_format = "2006-01-02"
+
+	# Add read time estimates in the format "X min read"
+	show_read_time = false
+
+	# Add custom assets with their paths relative to the static folder
+	custom_js   = []
+	custom_css  = [
+        "css/overrides.css"
+    ]
+
+
+	[params.sidebar]
+		# Replace the avatar with a picture of your own under static/images
+		avatar = "avatar.jpg"
+		# Use Markdown to format the string. This works nearly all over the theme
+		bio = "**Hi, I'm Simon**, a Linux Systems <br />and Automation Engineer."
+		# The icons will be shown if you enter your username
+		twitter = "analbeard"
+		github = "analbeard"
+		gitlab = ""
+		dribbble = ""
+		facebook = ""
+		googleplus = ""
+		flickr = ""
+		linkedin = "simonweald"
+
+		copyright = [
+			"&copy; Simon Weald",
+            "built with [Hugo](//gohugo.io)",
+            "powered by [Kubernetes](//kubernetes.io)"
+		]
+
+	[params.about]
+		hide  = false
+		title = "Who am I?"
+		content = "A Linux SysAdmin and opensource proponent with a passion for learning new technologies and improving systems and processes. I'm especially interested in distributed platorms and using them to make better and more resilient things.<ul><li>Areas of interest:<ul><li>Kubernetes</li><li>Ceph</li><li>OpenStack</li></ul></li></ul> I'm also fairly handy with a camera."
+
+	[params.portfolio]
+		hide  = false
+		title = "Some photos of mine:"
+
+		# The images and thumbnails are stored under static/images
+		# Create and change subfolders as you like
+		[[params.portfolio.gallery]]
+			image = "portfolio/01_full.jpg"
+			thumb = "portfolio/01_thumb.jpg"
+			title = "Salla, Finland"
+			description = "A topsy-turvy world"
+
+		[[params.portfolio.gallery]]
+			image = "portfolio/02_full.jpg"
+			thumb = "portfolio/02_thumb.jpg"
+			title = "Boston, USA"
+			description = "Mustangs downtown"
+
+		[[params.portfolio.gallery]]
+			image = "portfolio/03_full.jpg"
+			thumb = "portfolio/03_thumb.jpg"
+			title = "Vancouver, Canada"
+			description = "An opening of the heavens"
+
+		[[params.portfolio.gallery]]
+			image = "portfolio/04_full.jpg"
+			thumb = "portfolio/04_thumb.jpg"
+			title = "Venice, Italy"
+			description = "Foreboding waterways"
+
+		[[params.portfolio.gallery]]
+			image = "portfolio/05_full.jpg"
+			thumb = "portfolio/05_thumb.jpg"
+			title = "Goodwood Circuit, UK"
+			description = "An icon"
+
+		[[params.portfolio.gallery]]
+			image = "portfolio/06_full.jpg"
+			thumb = "portfolio/06_thumb.jpg"
+			title = "Devil's Bridge, Antigua"
+			description = "Raw power"
+
+        [[params.portfolio.gallery]]
+            image = "portfolio/07_full.jpg"
+            thumb = "portfolio/07_thumb.jpg"
+            title = "Nelson's Dockyard, Antigua"
+            description = "Provincial and pleasant"
+
+        [[params.portfolio.gallery]]
+            image = "portfolio/08_full.jpg"
+            thumb = "portfolio/08_thumb.jpg"
+            title = "Hammamet, Tunisia"
+            description = "Watching the ships go by"
+
+	[params.recentposts]
+		hide  = true
+		title = "Recent blog posts"
+
+	[params.contact]
+		hide  = false
+		title = "Get in touch:"
+		content = "Please feel free to drop me an email!"
+
+		# This can be exact coordinates or a searchable address in google maps
+		gmaps_address = ""
+		address = []
+		phone = ""
+
+		# Since this template is static, the contact form uses www.formspree.io as a
+		# proxy. The form makes a POST request to their servers to send the actual
+		# email. Visitors can send up to a 1000 emails each month for free.
+	    #
+	    # What you need to do for the setup?
+	    #
+	    # - set your email address under 'email' below
+	    # - upload the generated site to your server
+	    # - send a dummy email yourself to confirm your account
+	    # - click the confirm link in the email from www.formspree.io
+	    # - you're done. Happy mailing!
+		email = "hello@simonweald.com"
+
+		[params.contact.form]
+			# Set custom strings for the form if your native
+			# language isn't English
+			name = "Name"
+			email = "Email"
+			message = "Message"
+			submit = "Send message"
+
+
+# Menu links that appear on the left sidebar
+[[menu.main]]
+	name = "Blog"
+	url  = "https://www.dickingwithdocker.com"
+	weight = 0

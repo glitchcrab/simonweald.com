@@ -1,0 +1,39 @@
+---
+- name: provision base image
+  hosts: all
+  gather_facts: no
+
+  tasks:
+  - name: bootstrap python
+    raw: apk add python2 rsync sudo --no-cache
+
+- name: configure nginx
+  hosts: all
+
+  tasks:
+  - name: transfer nginx site config
+    copy:
+      src: ./files/default.conf
+      dest: /etc/nginx/conf.d/
+      owner: root
+      group: root
+
+  - name: make webroot
+    file:
+      path: /var/www
+      state: directory
+      owner: root
+      group: root
+
+  - name: transfer site files
+    synchronize:
+      src: site/public/
+      dest: /var/www/
+
+- name: cleanup
+  hosts: all
+  gather_facts: no
+
+  tasks:
+  - name: purge packages
+    shell: apk del python2 rsync sudo --no-cache
