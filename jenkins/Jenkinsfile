@@ -46,15 +46,17 @@ pipeline {
             steps {
                 sh 'dgoss run registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
             }
+            post {
+                success {
+                    withDockerRegistry([ credentialsId: "registry-analbeard-com", url: "https://registry.analbeard.com/" ]) {
+                        sh 'docker push website/simonweald:$SHORT_COMMIT'
+                        sh 'docker push website/simonweald:latest'
+                    }
+                }
+            }
         }
     }
     post {
-        success {
-            withDockerRegistry([ credentialsId: "registry-analbeard-com", url: "https://registry.analbeard.com/" ]) {
-                sh 'docker push website/simonweald:$SHORT_COMMIT'
-                sh 'docker push website/simonweald:latest'
-            }
-        }
         always {
             sh 'rm -rf site/public'
             sh 'docker rmi registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
