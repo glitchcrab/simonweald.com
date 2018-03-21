@@ -24,23 +24,31 @@ node {
 
     try {
         stage('Start') {
-            buildNotify 'STARTED'
+            steps {
+                buildNotify 'STARTED'
+            }
         }
         stage('Clone repository') {
-            checkout scm
-            def shortCommit = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
+            steps {
+                checkout scm
+                def shortCommit = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
+            }
         }
         stage ("Packer build") {
             environment {
                 SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
             }
-            sh 'packer build build.json'
+            steps {
+                sh 'packer build build.json'
+            }
         }
         stage ("Run tests with Goss") {
             environment {
                 SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
             }
-            sh 'dgoss run registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
+            steps {
+                sh 'dgoss run registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
+            }
         }
 
     } catch (err) {
