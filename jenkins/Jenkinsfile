@@ -43,19 +43,19 @@ pipeline {
             }
             post {
                 success {
-                    sh 'docker tag registry.analbeard.com/website/simonweald:$SHORT_COMMIT registry.analbeard.com/website/simonweald:latest'
+                    sh 'docker tag $REGISTRY_URL/website/simonweald:$SHORT_COMMIT $REGISTRY_URL/website/simonweald:latest'
                 }
             }
         }
         stage ("Run tests with Goss") {
             steps {
-                sh 'dgoss run registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
+                sh 'dgoss run $REGISTRY_URL/website/simonweald:$SHORT_COMMIT'
             }
             post {
                 success {
                     withDockerRegistry([ credentialsId: "registry-analbeard-com", url: "https://registry.analbeard.com/" ]) {
-                        sh 'docker push registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
-                        sh 'docker push registry.analbeard.com/website/simonweald:latest'
+                        sh 'docker push $REGISTRY_URL/website/simonweald:$SHORT_COMMIT'
+                        sh 'docker push $REGISTRY_URL/website/simonweald:latest'
                     }
                 }
             }
@@ -64,7 +64,8 @@ pipeline {
     post {
         always {
             sh 'rm -rf site/public'
-            sh 'docker rmi registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
+            sh 'docker rmi $REGISTRY_URL/website/simonweald:$SHORT_COMMIT'
+            sh 'docker rmi $REGISTRY_URL/website/simonweald:latest'
         }
     }
 }

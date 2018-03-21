@@ -1,9 +1,6 @@
 {
   "variables": {
     "git_shortcode": "{{env `SHORT_COMMIT`}}",
-    "registry_url": "{{env `REGISTRY_URL`}}",
-    "registry_user": "{{env `REGISTRY_CREDENTIALS_USR`}}",
-    "registry_pass": "{{env `REGISTRY_CREDENTIALS_PSW`}}",
     "image_name": "website/simonweald"
   },
   "builders": [
