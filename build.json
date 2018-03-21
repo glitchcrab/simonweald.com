@@ -2,8 +2,8 @@
   "variables": {
     "git_shortcode": "{{env `SHORT_COMMIT`}}",
     "registry_url": "{{env `REGISTRY_URL`}}",
-    "registry_user": "{{env `REGISTRY_USER`}}",
-    "registry_pass": "{{env `REGISTRY_PASS`}}",
+    "registry_user": "{{env `REGISTRY_CREDENTIALS_USR`}}",
+    "registry_pass": "{{env `REGISTRY_CREDENTIALS_PSW`}}",
     "image_name": "website/simonweald"
   },
   "builders": [
@@ -32,14 +32,6 @@
         "repository": "{{user `registry_url`}}/{{user `image_name`}}",
         "tag": "{{user `git_shortcode`}}"
       }
-      // },
-      // {
-      //   "type": "docker-push",
-      //   "login": true,
-      //   "login_username": "{{user `registry_user`}}",
-      //   "login_password": "{{user `registry_pass`}}",
-      //   "login_server": "{{user `registry_url`}}"
-      // }
     ] 
   ]
 }

@@ -22,6 +22,11 @@ pipeline {
 
     // currentBuild.result = "SUCCESS"
 
+    environment {
+        REGISTRY_CREDENTIALS = credentials('registry-analbeard-com')
+        REGISTRY_URL  = 'registry.analbeard.com'
+    }
+
     stages {
         stage ("Packer build") {
             environment {
