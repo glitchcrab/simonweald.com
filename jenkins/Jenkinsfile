@@ -41,6 +41,11 @@ pipeline {
             steps {
                 sh 'packer build build.json'
             }
+            post {
+                success {
+                    sh 'docker tag registry.analbeard.com/website/simonweald:$SHORT_COMMIT registry.analbeard.com/website/simonweald:latest'
+                }
+            }
         }
         stage ("Run tests with Goss") {
             steps {
