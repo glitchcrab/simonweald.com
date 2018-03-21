@@ -28,6 +28,12 @@ pipeline {
     }
 
     stages {
+        stage ("Collect static files with Hugo") {
+            steps {
+                sh 'cd site'
+                sh 'hugo'
+            }
+        }
         stage ("Packer build") {
             environment {
                 SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
