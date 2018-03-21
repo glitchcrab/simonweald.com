@@ -20,22 +20,24 @@
 pipeline {
     agent any
 
-    currentBuild.result = "SUCCESS"
+    // currentBuild.result = "SUCCESS"
 
-    stage ("Packer build") {
-        environment {
-            SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
+    stages {
+        stage ("Packer build") {
+            environment {
+                SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
+            }
+            steps {
+                sh 'packer build build.json'
+            }
         }
-        steps {
-            sh 'packer build build.json'
-        }
-    }
-    stage ("Run tests with Goss") {
-        environment {
-            SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
-        }
-        steps {
-            sh 'dgoss run registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
+        stage ("Run tests with Goss") {
+            environment {
+                SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
+            }
+            steps {
+                sh 'dgoss run registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
+            }
         }
     }
 
