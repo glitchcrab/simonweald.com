@@ -17,45 +17,26 @@
 //     slackSend (color: colorCode, message: "${buildStatus}: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
 // }
 
-node {
-    def website
+pipeline {
+    agent any
 
     currentBuild.result = "SUCCESS"
 
-    try {
-        // stage('Start') {
-        //     steps {
-        //         buildNotify 'STARTED'
-        //     }
-        // }
-        stage('Clone repository') {
-            steps {
-                checkout scm
-                def shortCommit = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
-            }
+    stage ("Packer build") {
+        environment {
+            SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
         }
-        stage ("Packer build") {
-            environment {
-                SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
-            }
-            steps {
-                sh 'packer build build.json'
-            }
+        steps {
+            sh 'packer build build.json'
         }
-        stage ("Run tests with Goss") {
-            environment {
-                SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
-            }
-            steps {
-                sh 'dgoss run registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
-            }
-        }
-
-    } catch (err) {
-        currentBuild.result = "FAILED"
-        throw err
     }
-    // }  finally {
-    //     buildNotify currentBuild.result
-    // }
+    stage ("Run tests with Goss") {
+        environment {
+            SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
+        }
+        steps {
+            sh 'dgoss run registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
+        }
+    }
+
 }
