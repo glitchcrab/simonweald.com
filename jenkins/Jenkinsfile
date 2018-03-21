@@ -25,6 +25,7 @@ pipeline {
     environment {
         REGISTRY_CREDENTIALS = credentials('registry-analbeard-com')
         REGISTRY_URL  = 'registry.analbeard.com'
+        SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
     }
 
     stages {
@@ -37,17 +38,11 @@ pipeline {
             }
         }
         stage ("Packer build") {
-            environment {
-                SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
-            }
             steps {
                 sh 'packer build build.json'
             }
         }
         stage ("Run tests with Goss") {
-            environment {
-                SHORT_COMMIT = sh(returnStdout: true, script: 'git rev-parse --short HEAD').trim()
-            }
             steps {
                 sh 'dgoss run registry.analbeard.com/website/simonweald:$SHORT_COMMIT'
             }
