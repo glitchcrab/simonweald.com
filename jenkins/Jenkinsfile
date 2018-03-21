@@ -30,8 +30,10 @@ pipeline {
     stages {
         stage ("Collect static files with Hugo") {
             steps {
-                sh 'cd site'
-                sh 'hugo'
+                sh '''
+                    cd site
+                    hugo
+                '''
             }
         }
         stage ("Packer build") {
