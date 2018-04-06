@@ -107,6 +107,30 @@ paginate = 10
             title = "Hammamet, Tunisia"
             description = "Watching the ships go by"
 
+		[[params.portfolio.gallery]]
+            image = "portfolio/09_full.jpg"
+            thumb = "portfolio/09_thumb.jpg"
+            title = "National Trust"
+            description = "Decaying infrastructure"
+
+		[[params.portfolio.gallery]]
+            image = "portfolio/010_full.jpg"
+            thumb = "portfolio/010_thumb.jpg"
+            title = "McLarens"
+            description = "Old and new"
+
+		[[params.portfolio.gallery]]
+            image = "portfolio/011_full.jpg"
+            thumb = "portfolio/011_thumb.jpg"
+            title = "Italian Lakes"
+            description = "Disappearing into the mist"
+
+		[[params.portfolio.gallery]]
+            image = "portfolio/012_full.jpg"
+            thumb = "portfolio/012_thumb.jpg"
+            title = "Dunsfold, UK"
+            description = "Loop the loop"
+
 	[params.recentposts]
 		hide  = true
 		title = "Recent blog posts"
