@@ -62,7 +62,7 @@ pipeline {
         }
         stage ("deploy new image to Kubernetes") {
             steps {
-                withKubeConfig(aCertificate: 'kubectl-wealdaa-ca-cert', credentialsId: 'kubectl-wealdaa-admin-cert', serverUrl: 'https://wealdaa33.miniserver.com:6443') {
+                withKubeConfig(caCertificate: 'kubectl-wealdaa-ca-cert', credentialsId: 'kubectl-wealdaa-admin-cert', serverUrl: 'https://wealdaa33.miniserver.com:6443') {
                     sh "kubectl set image deployment/simonweald-com -n shw front-end=$REGISTRY_URL/website/simonweald:$SHORT_COMMIT"
                 }
             }
