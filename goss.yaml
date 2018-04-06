@@ -17,6 +17,5 @@ file:
   /var/www/index.html:
     exists: true
     mode: "0644"
-    size: 7806
     filetype: file
     contains: []
