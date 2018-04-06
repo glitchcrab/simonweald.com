@@ -116,7 +116,7 @@ paginate = 10
 		[[params.portfolio.gallery]]
             image = "portfolio/010_full.jpg"
             thumb = "portfolio/010_thumb.jpg"
-            title = "McLarens"
+            title = "Dunsfold, UK"
             description = "Old and new"
 
 		[[params.portfolio.gallery]]
