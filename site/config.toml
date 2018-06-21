@@ -51,7 +51,7 @@ paginate = 10
 	[params.about]
 		hide  = false
 		title = "Who am I?"
-		content = "A Linux SysAdmin and opensource proponent with a passion for learning new technologies and improving systems and processes. I'm especially interested in distributed platorms and using them to make better and more resilient things.<ul><li>Areas of interest:<ul><li>Kubernetes</li><li>Ceph</li><li>OpenStack</li></ul></li></ul> I'm also fairly handy with a camera."
+		content = "A Linux SysAdmin and opensource proponent with a passion for learning new technologies and improving systems and processes. I'm especially interested in distributed platorms and using them to make better and more resilient things.<ul><li>Areas of interest:<ul><li>Kubernetes</li><li>Ceph</li><li>OpenStack</li><li>Ansible</li></ul></li></ul> I'm also fairly handy with a camera."
 
 	[params.portfolio]
 		hide  = false
