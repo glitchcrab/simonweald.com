@@ -9,8 +9,7 @@ googleAnalytics = ""
 paginate = 10
 
 [params]
-	# To provide some metadata for search engines feel free to add a few
-    # information about you and your website.
+        # information about you and your website.
 	name = "Simon Weald"
 	description = "Personal page fpr Simon Weald, a Linux and Automation Engineer"
 
@@ -23,8 +22,8 @@ paginate = 10
 	# Add custom assets with their paths relative to the static folder
 	custom_js   = []
 	custom_css  = [
-        "css/overrides.css"
-    ]
+            "css/overrides.css"
+        ]
 
 
 	[params.sidebar]
@@ -95,41 +94,41 @@ paginate = 10
 			title = "Devil's Bridge, Antigua"
 			description = "Raw power"
 
-        [[params.portfolio.gallery]]
-            image = "portfolio/07_full.jpg"
-            thumb = "portfolio/07_thumb.jpg"
-            title = "Nelson's Dockyard, Antigua"
-            description = "Provincial and pleasant"
+                [[params.portfolio.gallery]]
+                        image = "portfolio/07_full.jpg"
+                        thumb = "portfolio/07_thumb.jpg"
+                        title = "Nelson's Dockyard, Antigua"
+                        description = "Provincial and pleasant"
 
-        [[params.portfolio.gallery]]
-            image = "portfolio/08_full.jpg"
-            thumb = "portfolio/08_thumb.jpg"
-            title = "Hammamet, Tunisia"
-            description = "Watching the ships go by"
+                [[params.portfolio.gallery]]
+                        image = "portfolio/08_full.jpg"
+                        thumb = "portfolio/08_thumb.jpg"
+                        title = "Hammamet, Tunisia"
+                        description = "Watching the ships go by"
 
-		[[params.portfolio.gallery]]
-            image = "portfolio/09_full.jpg"
-            thumb = "portfolio/09_thumb.jpg"
-            title = "National Trust"
-            description = "Decaying infrastructure"
+                [[params.portfolio.gallery]]
+                        image = "portfolio/09_full.jpg"
+                        thumb = "portfolio/09_thumb.jpg"
+                        title = "National Trust"
+                        description = "Decaying infrastructure"
 
-		[[params.portfolio.gallery]]
-            image = "portfolio/010_full.jpg"
-            thumb = "portfolio/010_thumb.jpg"
-            title = "Dunsfold, UK"
-            description = "Old and new"
+                [[params.portfolio.gallery]]
+                        image = "portfolio/010_full.jpg"
+                        thumb = "portfolio/010_thumb.jpg"
+                        title = "Dunsfold, UK"
+                        description = "Old and new"
 
-		[[params.portfolio.gallery]]
-            image = "portfolio/011_full.jpg"
-            thumb = "portfolio/011_thumb.jpg"
-            title = "Italian Lakes"
-            description = "Disappearing into the mist"
+                [[params.portfolio.gallery]]
+                        image = "portfolio/011_full.jpg"
+                        thumb = "portfolio/011_thumb.jpg"
+                        title = "Italian Lakes"
+                        description = "Disappearing into the mist"
 
-		[[params.portfolio.gallery]]
-            image = "portfolio/012_full.jpg"
-            thumb = "portfolio/012_thumb.jpg"
-            title = "Dunsfold, UK"
-            description = "Loop the loop"
+                [[params.portfolio.gallery]]
+                        image = "portfolio/012_full.jpg"
+                        thumb = "portfolio/012_thumb.jpg"
+                        title = "Dunsfold, UK"
+                        description = "Loop the loop"
 
 	[params.recentposts]
 		hide  = true
@@ -148,15 +147,6 @@ paginate = 10
 		# Since this template is static, the contact form uses www.formspree.io as a
 		# proxy. The form makes a POST request to their servers to send the actual
 		# email. Visitors can send up to a 1000 emails each month for free.
-	    #
-	    # What you need to do for the setup?
-	    #
-	    # - set your email address under 'email' below
-	    # - upload the generated site to your server
-	    # - send a dummy email yourself to confirm your account
-	    # - click the confirm link in the email from www.formspree.io
-	    # - you're done. Happy mailing!
-		email = "hello@simonweald.com"
 
 		[params.contact.form]
 			# Set custom strings for the form if your native
@@ -169,6 +159,6 @@ paginate = 10
 
 # Menu links that appear on the left sidebar
 [[menu.main]]
-	name = "Blog"
+	name = "My blog"
 	url  = "https://www.dickingwithdocker.com"
 	weight = 0
