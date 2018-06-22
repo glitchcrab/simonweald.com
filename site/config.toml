@@ -11,7 +11,7 @@ paginate = 10
 [params]
         # information about you and your website.
 	name = "Simon Weald"
-	description = "Personal page fpr Simon Weald, a Linux and Automation Engineer"
+	description = "Personal page for Simon Weald, a Linux and Automation Engineer"
 
 	# Format dates with Go's time formatting
 	date_format = "2006-01-02"
@@ -147,6 +147,8 @@ paginate = 10
 		# Since this template is static, the contact form uses www.formspree.io as a
 		# proxy. The form makes a POST request to their servers to send the actual
 		# email. Visitors can send up to a 1000 emails each month for free.
+
+                email = "hello@simonweald.com"
 
 		[params.contact.form]
 			# Set custom strings for the form if your native
