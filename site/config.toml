@@ -1,6 +1,6 @@
 baseurl = "https://www.simonweald.com/"
 languageCode = "en-gb"
-title = "Simon Weald"
+title = "Simon Weald | Linux Automation Engineer"
 theme = "hugo-strata-theme"
 disqusShortname = "simonweald"
 # Enable Google Analytics by inserting your tracking code
