@@ -60,11 +60,6 @@ pipeline {
                 }
             }
         }
-//        stage ("deploy new image to Kubernetes") {
-//            steps {
-//                sh "kubectl set image deployment/simonweald-com -n shw front-end=$REGISTRY_URL/website/simonweald:$SHORT_COMMIT"
-//            }
-//        }
     }
     post {
         always {
