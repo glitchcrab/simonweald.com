@@ -32,7 +32,7 @@ paginate = 10
 		# Use Markdown to format the string. This works nearly all over the theme
 		bio = "**Hi, I'm Simon**, a Linux Systems <br />and Automation Engineer."
 		# The icons will be shown if you enter your username
-		twitter = "analbeard"
+		twitter = "glitchcrab"
 		github = "glitchcrab"
 		gitlab = ""
 		dribbble = ""
